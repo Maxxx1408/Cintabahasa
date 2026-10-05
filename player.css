@@ -1,0 +1,68 @@
+.player-page { max-width: 760px; }
+
+.player-card {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.player-card input { margin-top: 12px; }
+
+.code-input {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.waiting-orb {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    background: #fff4c9;
+    color: #6c4ceb;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.mini-code {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: #f1f2f7;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.big-score {
+    font-size: clamp(70px, 16vw, 130px);
+    font-weight: 950;
+    line-height: 1;
+    color: #6c4ceb;
+    margin: 18px 0;
+}
+
+
+.article-view { max-width: 900px; }
+.article-content {
+    margin-top: 22px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fbfcff;
+    white-space: pre-wrap;
+    line-height: 1.8;
+    font-size: 16px;
+    max-height: 58vh;
+    overflow-y: auto;
+}
+.article-actions { margin-top: 22px; }
+.article-actions p { margin: 0 0 12px; }
+@media (max-width: 700px) {
+    .article-content { padding: 18px; max-height: 55vh; }
+}

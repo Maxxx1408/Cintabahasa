@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up • CintaBahasa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+<main class="auth-shell">
+    <a class="auth-back" href="index.html">← Back</a>
+    <a class="auth-logo" href="index.html">CINTABAHASA</a>
+    <section class="auth-card">
+        <div class="auth-mark">✦</div>
+        <div class="eyebrow">CREATE ACCOUNT</div>
+        <h1>Join CintaBahasa</h1>
+        <p class="auth-subtitle">Create your CintaBahasa account and start using the online platform.</p>
+        <form id="signupForm">
+            <label for="signupName">Name</label>
+            <input id="signupName" type="text" placeholder="Your name" required>
+
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" placeholder="you@example.com" required>
+
+            <label for="signupPassword">Password</label>
+            <div class="password-wrap">
+                <input id="signupPassword" type="password" placeholder="At least 6 characters" required>
+                <button type="button" class="eye-password" data-target="signupPassword" aria-label="Show password">
+                    <span class="eye-icon">◉</span>
+                </button>
+            </div>
+
+            <label>Role</label>
+            <div class="role-grid">
+                <label class="role-option selected">
+                    <input type="radio" name="role" value="student" checked>
+                    <span class="role-icon">🎓</span>
+                    <span class="role-copy"><strong>Student</strong><small>Join quizzes</small></span>
+                    <span class="role-check">✓</span>
+                </label>
+                <label class="role-option">
+                    <input type="radio" name="role" value="teacher">
+                    <span class="role-icon">📚</span>
+                    <span class="role-copy"><strong>Teacher</strong><small>Create quizzes</small></span>
+                    <span class="role-check">✓</span>
+                </label>
+            </div>
+
+            <button class="btn primary wide" type="submit" style="margin-top:18px;">Create Account</button>
+            <p id="signupMessage" class="message"></p>
+        </form>
+        <p class="switch-auth">Already have an account? <a href="login.html" class="auth-link">Log in</a></p>
+    </section>
+    <p class="auth-footer">CintaBahasa • Quiz made fun.</p>
+</main>
+<script type="module" src="auth-ui.js"></script>
+</body>
+</html>

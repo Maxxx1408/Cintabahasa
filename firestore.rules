@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Profil user + riwayat quiz yang pernah dimainkan: hanya pemilik akun
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+      match /history/{gameId} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+
+    // Game: dibuat dan diubah oleh host, bisa dibaca semua user yang login
+    match /games/{code} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.hostId == request.auth.uid;
+      allow update, delete: if request.auth != null
+                    && resource.data.hostId == request.auth.uid;
+
+      // Pemain: tiap user hanya boleh menulis datanya sendiri
+      match /players/{uid} {
+        allow read: if request.auth != null;
+        allow create, update: if request.auth != null && request.auth.uid == uid;
+      }
+
+      // Jawaban: hanya bisa dibuat sekali (tidak bisa diubah setelah dikirim)
+      match /answers/{answerId} {
+        allow read: if request.auth != null;
+        allow create: if request.auth != null
+                      && request.resource.data.uid == request.auth.uid
+                      && answerId.matches(request.auth.uid + '_[0-9]+');
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard • CintaBahasa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-page">
+<header class="dashboard-topbar">
+    <a class="logo" href="index.html">CINTABAHASA</a>
+
+    <div class="dashboard-user">
+        <div id="dashboardAvatar" class="avatar">U</div>
+        <span id="dashboardName">Your Account</span>
+        <button class="logout-btn" type="button">Log out</button>
+    </div>
+</header>
+
+<main class="dashboard">
+    <section class="welcome">
+        <div>
+            <div id="dashboardRole" class="eyebrow">DASHBOARD</div>
+            <h1>Ready to make a quiz?</h1>
+            <p>Create quizzes, host games, and manage your CintaBahasa activity.</p>
+        </div>
+        <a href="host.html" class="btn primary">+ Create Quiz</a>
+    </section>
+
+    <section class="dashboard-grid">
+        <a href="host.html" class="dashboard-card create-card">
+            <span class="card-icon yellow">✦</span>
+            <h2>Create a quiz</h2>
+            <p>Build questions, answers, and a live game.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+        <a href="player.html" class="dashboard-card">
+            <span class="card-icon purple">🎮</span>
+            <h2>Join a game</h2>
+            <p>Enter a game code and start playing.</p>
+            <span class="card-arrow">→</span>
+        </a>
+
+    </section>
+
+    <section id="my-quizzes" class="recent-section dashboard-data-section">
+        <div class="section-heading">
+            <div>
+                <div class="eyebrow">MY QUIZZES</div>
+                <h2>Quizzes you created</h2>
+            </div>
+        </div>
+        <div id="myQuizzesList" class="dashboard-list"></div>
+    </section>
+
+    <section id="results" class="recent-section dashboard-data-section">
+        <div class="section-heading">
+            <div>
+                <div class="eyebrow">RESULTS</div>
+                <h2>Quiz results</h2>
+            </div>
+        </div>
+        <div id="resultsList" class="dashboard-list"></div>
+    </section>
+</main>
+
+<script type="module" src="auth-ui.js"></script>
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>

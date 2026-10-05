@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Quiz • CintaBahasa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="logo" href="index.html">CINTABAHASA</a>
+        <a class="back-link" href="dashboard.html">← Back to Dashboard</a>
+    </header>
+
+    <main class="player-page">
+        <section id="joinView" class="panel player-card">
+            <div class="eyebrow">PLAYER MODE</div>
+            <h1>Join a quiz</h1>
+            <p class="muted">Enter the game code and your name to join the online game.</p>
+            <input id="gameCodeInput" class="code-input" maxlength="6" placeholder="GAME CODE">
+            <input id="playerNameInput" maxlength="20" placeholder="Your name">
+            <button id="joinBtn" class="btn primary wide">Join Game</button>
+            <p id="joinMessage" class="message"></p>
+        </section>
+
+        <section id="articleView" class="panel article-view hidden">
+            <div class="eyebrow">READ BEFORE THE QUIZ</div>
+            <h1 id="playerArticleTitle">Article</h1>
+            <div id="playerArticleContent" class="article-content"></div>
+            <div class="article-actions">
+                <p class="muted">Read the article carefully before continuing to the quiz.</p>
+                <button id="articleDoneBtn" class="btn primary wide" type="button">I've finished reading</button>
+            </div>
+        </section>
+
+        <section id="waitingView" class="panel player-card hidden">
+            <div class="waiting-orb">✓</div>
+            <div class="eyebrow">YOU'RE IN</div>
+            <h1>Waiting for host...</h1>
+            <p class="muted">You're joining as <strong id="joinedName"></strong>.</p>
+            <div class="mini-code" id="joinedCode"></div>
+        </section>
+
+        <section id="playView" class="panel hidden">
+            <div class="quiz-top">
+                <span id="playerProgress">Question 1 / 5</span>
+                <span id="playerTimer">30</span>
+            </div>
+            <h1 id="playerQuestion"></h1>
+            <div id="playerAnswers" class="answer-grid"></div>
+            <p id="answerMessage" class="message"></p>
+        </section>
+
+        <section id="scoreView" class="panel player-card hidden">
+            <div class="waiting-orb">★</div>
+            <div class="eyebrow">YOUR SCORE</div>
+            <div id="finalScore" class="big-score">0</div>
+            <h1 id="finalPlayerName"></h1>
+            <p class="muted">Nice work! The host can see the final leaderboard.</p>
+            <a class="btn secondary wide" href="dashboard.html">Back to Dashboard</a>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script type="module" src="player.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host Quiz • CintaBahasa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="host.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="logo" href="index.html">CINTABAHASA</a>
+        <a class="back-link" href="dashboard.html">← Back to Dashboard</a>
+    </header>
+
+    <main class="host-page">
+        <section id="setupView" class="panel">
+            <div class="eyebrow">HOST MODE</div>
+            <h1>Create your quiz</h1>
+            <p id="hostStatus" class="muted">Build your questions and create an online quiz room.</p>
+
+            <label for="quizTitle">Quiz title</label>
+            <input id="quizTitle" type="text" placeholder="Enter your quiz title">
+
+            <div class="article-editor">
+                <div class="editor-heading article-heading">
+                    <div>
+                        <h2>Reading Article</h2>
+                        <p class="muted">Players will read this article before they can start the quiz.</p>
+                    </div>
+                </div>
+                <label for="articleTitle">Article title</label>
+                <input id="articleTitle" type="text" placeholder="Enter the article title">
+                <label for="articleContent">Article content</label>
+                <textarea id="articleContent" class="article-content-input" rows="10" placeholder="Paste or write the article here..."></textarea>
+            </div>
+
+            <div class="question-editor">
+                <div class="editor-heading">
+                    <h2>Questions</h2>
+                    <button id="addQuestionBtn" class="small-btn">+ Add question</button>
+                </div>
+                <div id="questionList"></div>
+            </div>
+
+            <button id="startHostBtn" class="btn primary wide">Create Live Room</button>
+        </section>
+
+        <section id="lobbyView" class="panel hidden">
+            <div class="room-code-label">GAME CODE</div>
+            <div id="roomCode" class="room-code">------</div>
+            <h1 id="lobbyTitle">Quiz</h1>
+            <div class="lobby-grid">
+                <div>
+                    <h2>Players <span id="playerCount" class="count">0</span></h2>
+                    <div id="playerList" class="player-list"></div>
+                </div>
+            </div>
+            <button id="startQuizBtn" class="btn primary wide">Start Quiz</button>
+        </section>
+
+        <section id="questionView" class="panel hidden">
+            <div class="quiz-top">
+                <span id="hostProgress">Question 1 / 5</span>
+                <span id="hostTimer">30</span>
+            </div>
+            <h1 id="hostQuestion"></h1>
+            <div class="live-board-wrap"><div><h2>Question</h2><div id="hostAnswers" class="answer-grid"></div></div><aside class="live-board"><h2>Live leaderboard</h2><div id="hostLeaderboard" class="leaderboard"></div></aside></div>
+            <button id="nextQuestionBtn" class="btn primary wide">Next Question</button>
+        </section>
+
+        <section id="resultView" class="panel hidden">
+            <div class="eyebrow">QUIZ COMPLETE</div>
+            <h1>Final leaderboard</h1>
+            <div id="finalLeaderboard" class="leaderboard"></div>
+            <button id="restartBtn" class="btn primary wide">Create Another Quiz</button>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script type="module" src="host.js"></script>
+</body>
+</html>

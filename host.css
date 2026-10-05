@@ -1,0 +1,129 @@
+.editor-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin: 32px 0 14px;
+}
+
+.small-btn {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background: #fff4c9;
+    color: #6c4ceb;
+    font-weight: 800;
+}
+
+.question-item {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 12px;
+    background: #fbfcff;
+}
+
+.question-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-weight: 900;
+}
+
+.remove-question {
+    border: 0;
+    background: transparent;
+    color: var(--danger);
+    font-weight: 800;
+}
+
+.option-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.correct-select {
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px;
+    background: white;
+}
+
+.room-code {
+    font-size: clamp(50px, 12vw, 90px);
+    line-height: 1;
+    letter-spacing: .08em;
+    font-weight: 950;
+    margin: 10px 0 18px;
+}
+
+.lobby-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.player-list {
+    display: grid;
+    gap: 9px;
+    margin-top: 14px;
+}
+
+.player-chip {
+    padding: 13px 15px;
+    border-radius: 12px;
+    background: #f4f5fa;
+    font-weight: 800;
+}
+
+.count {
+    color: #6c4ceb;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .lobby-grid, .option-row { grid-template-columns: 1fr; }
+}
+
+
+.live-board-wrap { display:grid; grid-template-columns:1.45fr .75fr; gap:20px; align-items:start; margin-top:18px; }
+.live-board { border:1px solid var(--line); border-radius:18px; padding:18px; background:#fbfcff; position:sticky; top:20px; }
+.live-board h2 { margin-top:0; }
+.leaderboard { display:grid; gap:9px; }
+.rank-row { display:grid; grid-template-columns:48px 1fr auto; gap:10px; align-items:center; padding:12px 13px; border-radius:12px; background:#f4f5fa; }
+.top-rank { background:#fff4c9; }
+.rank { font-weight:950; }
+.mini-code { word-break:break-all; }
+@media (max-width: 850px) { .live-board-wrap { grid-template-columns:1fr; } .live-board { position:static; } }
+
+
+.article-editor {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fbfcff;
+}
+.article-heading { margin: 0 0 16px; }
+.article-heading h2 { margin: 0 0 5px; }
+.article-heading p { margin: 0; }
+.article-editor label { display: block; margin: 14px 0 7px; font-weight: 800; }
+.article-content-input {
+    width: 100%;
+    min-height: 220px;
+    resize: vertical;
+    padding: 13px;
+    border: 1.5px solid var(--line);
+    border-radius: 11px;
+    outline: none;
+    color: var(--text);
+    background: white;
+    line-height: 1.6;
+    font: inherit;
+}
+.article-content-input:focus { border-color: #8b73e5; box-shadow: 0 0 0 3px rgba(91,63,209,.1); }

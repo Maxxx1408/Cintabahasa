@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • CintaBahasa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+<main class="auth-shell">
+    <a class="auth-back" href="index.html">← Back</a>
+    <a class="auth-logo" href="index.html">CINTABAHASA</a>
+
+    <section class="auth-card">
+        <div class="auth-mark">✦</div>
+        <div class="eyebrow">WELCOME BACK</div>
+        <h1>Log in to CintaBahasa</h1>
+        <p class="auth-subtitle">Log in to create, host, and join quizzes.</p>
+
+        <form id="loginForm">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+            <label for="loginPassword">Password</label>
+            <div class="password-wrap">
+                <input id="loginPassword" type="password" placeholder="Your password" autocomplete="current-password" required>
+                <button type="button" class="eye-password" data-target="loginPassword" aria-label="Show password">
+                    <span class="eye-icon">◉</span>
+                </button>
+            </div>
+
+            <div class="auth-row">
+                <label class="remember">
+                    <input id="rememberMe" type="checkbox">
+                    <span>Remember me</span>
+                </label>
+                <a href="forgot-password.html" class="auth-link">Forgot password?</a>
+            </div>
+
+            <button class="btn primary wide" type="submit">Log In</button>
+            <p id="loginMessage" class="message"></p>
+        </form>
+<p class="switch-auth">
+            Don't have an account?
+            <a href="signup.html" class="auth-link">Sign up</a>
+        </p>
+    </section>
+
+    <p class="auth-footer">CintaBahasa • Quiz made fun.</p>
+</main>
+
+<script type="module" src="auth-ui.js"></script>
+</body>
+</html>
