@@ -98,3 +98,11 @@ document.querySelector(".logout-btn")?.addEventListener("click", async () => {
     await signOut(auth);
     location.href = "index.html";
 });
+// ---------- PILIHAN ROLE (Student / Teacher) ----------
+document.querySelectorAll('input[name="role"]').forEach(radio => {
+    radio.addEventListener("change", () => {
+        document.querySelectorAll(".role-option").forEach(label => {
+            label.classList.toggle("selected", label.querySelector("input").checked);
+        });
+    });
+});
